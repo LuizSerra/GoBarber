@@ -1,5 +1,6 @@
 import express from 'express';
 import routes from './routes';
+import 'reflect-metadata';
 
 import './database';
 
@@ -11,4 +12,6 @@ app.get('/', (request, response) => {
     response.json({ message: 'Hello GoStack' });
 });
 
-app.listen(3333);
+app.listen(3333, () => {
+    console.log('✈ Server started on port 3333');
+});
