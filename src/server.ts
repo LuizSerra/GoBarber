@@ -3,9 +3,11 @@ import routes from './routes';
 import 'reflect-metadata';
 
 import './database';
+import upload from './config/upload';
 
 const app = express();
 app.use(express.json());
+app.use('/files', express.static(upload.directory));
 app.use(routes);
 
 app.get('/', (request, response) => {
